@@ -40,8 +40,10 @@ const App: Component = () => {
   })
 
   const [err, setErr] = createSignal<string>()
-  const [loading, data] = useLoading(() =>
-    Promise.all([
+  const [loading, data] = useLoading(() => {
+    console.log(initialLang);
+    console.log(langMap);
+    return Promise.all([
       (async () => {
         add(initialLang, (await langMap[initialLang]()).default)
         loadedLangs.add(initialLang)
@@ -54,7 +56,7 @@ const App: Component = () => {
         )
       })(),
     ])
-  )
+  })
   data()
   return (
     <>
