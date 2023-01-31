@@ -26,6 +26,7 @@ const File = () => {
           />
           <OpenWith />
         </HStack>
+        
         <Suspense fallback={<FullLoading />}>
           <Dynamic component={cur().component} />
         </Suspense>

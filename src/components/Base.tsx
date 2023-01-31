@@ -109,6 +109,7 @@ export const SelectWrapper = (props: {
         <SelectValue />
         <SelectIcon />
       </SelectTrigger>
+      
       <SelectContent>
         <SelectListbox>
           <For each={props.options}>
