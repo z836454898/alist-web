@@ -58,6 +58,7 @@ const App: Component = () => {
   data()
   return (
     <>
+      {/*加载进度条*/}
       <Portal>
         <Progress
           indeterminate
@@ -72,6 +73,7 @@ const App: Component = () => {
           <ProgressIndicator />
         </Progress>
       </Portal>
+      
       <Switch
         fallback={
           <Routes base={base_path}>

@@ -15,9 +15,11 @@ const MustUser = (props: { children: JSXElement }) => {
   })()
   return (
     <Switch fallback={props.children}>
+      {/*加载中*/}
       <Match when={loading()}>
         <FullScreenLoading />
       </Match>
+      {/*错误页*/}
       <Match when={err() !== undefined}>
         <Error msg={t("home.get_current_user_failed") + err()} />
       </Match>

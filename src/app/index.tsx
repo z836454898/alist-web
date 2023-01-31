@@ -10,6 +10,7 @@ const Index = () => {
   globalStyles()
   return (
     <HopeProvider config={theme}>
+      {/*异常处理*/}
       <ErrorBoundary
         fallback={(err) => {
           console.error("error", err)

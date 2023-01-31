@@ -42,8 +42,10 @@ const ListLayout = () => {
   }
   return (
     <VStack class="list" w="$full" spacing="$1">
+      {/*列表头*/}
       <HStack class="title" w="$full" p="$2">
         <HStack w={cols[0].w} spacing="$1">
+          {/*多选*/}
           <Show when={checkboxOpen()}>
             <Checkbox
               checked={allChecked()}
@@ -53,6 +55,7 @@ const ListLayout = () => {
               }}
             />
           </Show>
+          {/*文件名*/}
           <Text {...itemProps(cols[0])}>{t(`home.obj.${cols[0].name}`)}</Text>
         </HStack>
         <Text w={cols[1].w} {...itemProps(cols[1])}>
@@ -66,6 +69,7 @@ const ListLayout = () => {
           {t(`home.obj.${cols[2].name}`)}
         </Text>
       </HStack>
+      {/*列表体*/}
       <For each={objStore.objs}>
         {(obj, i) => {
           return <ListItem obj={obj} index={i()} />

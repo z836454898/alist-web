@@ -22,9 +22,9 @@ export interface Col {
 }
 
 export const cols: Col[] = [
-  { name: "name", textAlign: "left", w: { "@initial": "76%", "@md": "50%" } },
-  { name: "size", textAlign: "right", w: { "@initial": "24%", "@md": "17%" } },
-  { name: "modified", textAlign: "right", w: { "@initial": 0, "@md": "33%" } },
+  { name: "name", textAlign: "left", w: { "@initial": "84%", "@md": "79%" } },
+  { name: "size", textAlign: "right", w: { "@initial": "16%", "@md": "6%" } },
+  { name: "modified", textAlign: "right", w: { "@initial": 0, "@md": "15%" } },
 ]
 
 export const ListItem = (props: { obj: StoreObj; index: number }) => {
@@ -98,12 +98,13 @@ export const ListItem = (props: { obj: StoreObj; index: number }) => {
               }
             }}
           />
+          {/*文件名*/}
           <Text
             class="name"
             css={{
-              whiteSpace: "nowrap",
+              whiteSpace: "wrap",
               overflow: "hidden",
-              textOverflow: "ellipsis",
+              // textOverflow: "ellipsis",
             }}
             title={props.obj.name}
           >

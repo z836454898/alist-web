@@ -147,6 +147,7 @@ export const side_menu_items: SideMenuItem[] = [
     icon: IoHome,
     to: "/",
     role: UserRole.GUEST,
-    external: true,
+    component: lazy(() => import("~/pages/home/Layout")),
+    // external: true,
   },
 ]

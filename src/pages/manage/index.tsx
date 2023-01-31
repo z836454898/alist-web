@@ -20,6 +20,7 @@ const Manage = () => {
       w="$full"
     >
       <Header />
+      
       <Flex w="$full" h="calc(100vh - 64px)">
         <Box
           display={{ "@initial": "none", "@sm": "block" }}
@@ -37,6 +38,7 @@ const Manage = () => {
             </HStack>
           </Center>
         </Box>
+        
         <Box
           w={{
             "@initial": "$full",

@@ -17,12 +17,15 @@ export const Obj = () => {
   const { handlePathChange } = usePath()
   let lastPathname = pathname()
   createEffect(
+    //目录跳转时触发
     on(pathname, (pathname) => {
       useObjTitle()
+      //不是首次打开该页面
       if (!first) {
         resetGlobalPage()
       }
       first = false
+      //记录滚动条位置
       recordScroll(lastPathname, window.scrollY)
       handlePathChange(pathname)
       lastPathname = pathname
@@ -40,6 +43,7 @@ export const Obj = () => {
     >
       <Suspense fallback={<FullLoading />}>
         <Switch>
+          {/*请求异常处理*/}
           <Match when={objStore.err}>
             <Error msg={objStore.err} disableColor />
           </Match>
